@@ -15,7 +15,11 @@ off_t fsize(const char *filename) {
     return -1;
 }
 
+#if defined(MONOLITHIC)
+int charter_tex_main(int argc, char* argv[])
+#else
 int main(int argc, char* argv[])
+#endif
 {
     if (argc < 2)
     {

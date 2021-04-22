@@ -6,7 +6,12 @@
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#if !defined(_MSC_VER)
 #include <unistd.h>
+#else
+#define strtok_r	strtok_s
+#define S_ISREG(m)  (((m) & S_IFMT) == S_IFREG)
+#endif
 #include <math.h>
 
 #include "csv_parser/csvparser.h"
@@ -146,9 +151,10 @@ cbool startsWith(const char *pre, const char *str)
 
 int is_regular_file(const char *path)
 {
+    int res;
     struct stat path_stat;
-    stat(path, &path_stat);
-    return S_ISREG(path_stat.st_mode);
+    res = stat(path, &path_stat);
+    return (res == 0) && S_ISREG(path_stat.st_mode);
 }
 
 clist* parse_csv(char * link, unsigned int * size)

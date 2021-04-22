@@ -1,6 +1,12 @@
 #ifndef __CHARTER_STRING_H__
 #define __CHARTER_STRING_H__
 
+#if defined(_MSC_VER)
+#ifndef __attribute__
+#define __attribute__(x) /**/
+#endif
+#endif
+
 struct {
   int    size;
   char  *data;
