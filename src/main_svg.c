@@ -6,7 +6,7 @@
 #include "parser.h"
 #include "renderer.h"
 
-off_t fsize(const char *filename) {
+static off_t fsize(const char *filename) {
     struct stat st; 
 
     if (stat(filename, &st) == 0)

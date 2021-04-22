@@ -129,7 +129,7 @@ compute_ticks(double min,
               cbool  vertical,
               cbool  logmode)
 {
-    ticks r;
+	ticks r = { 0 };
     r.labels = NULL;
     r.vals = NULL;
     r.pos = NULL;
@@ -139,7 +139,7 @@ compute_ticks(double min,
     int r_np = r_xp;
     cbool done = FALSE;
     double tick;
-    int t0 ;
+    int t0 = 0;
     for (r_np = r_xp + 2; r_np >= r_xp-2; r_np --)
     {
         int i;
