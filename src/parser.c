@@ -584,13 +584,13 @@ parse_line(char* line, chart * chart, _pstate prev)
         } else if (strcmp(tok, TOK_WIDTH) == 0)
         {
             strip(rest, ' ');
-            chart->width = atof(rest);
+            chart->width = (int)round(atof(rest));
             prev = NONE;
             break;
         } else if (strcmp(tok, TOK_HEIGHT) == 0)
         {
             strip(rest, ' ');
-            chart->height = atof(rest);
+            chart->height = (int)round(atof(rest));
             prev = NONE;
             break;
         } else if (strcmp(tok, TOK_TITLE) == 0)
