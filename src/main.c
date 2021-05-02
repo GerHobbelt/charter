@@ -39,8 +39,9 @@ int main(int argc, const char* argv[])
 {
     if (argc < 2)
     {
-        printf("usage: charter command file\n");
-        return -1;
+        fprintf(stderr, "usage: charter command file\n");
+		print_command_list();
+		return EXIT_FAILURE;
     }
 
 	const char* cmd = argv[1];
@@ -54,5 +55,6 @@ int main(int argc, const char* argv[])
 		}
 	}
 	fprintf(stderr, "Unknown command '%s'\n", cmd);
+	print_command_list();
 	return EXIT_FAILURE;
 }

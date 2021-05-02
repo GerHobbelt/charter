@@ -24,21 +24,27 @@ int main(int argc, const char* argv[])
     if (argc < 2)
     {
         fprintf(stderr, "usage: charter file\n");
-        return -1;
+        return EXIT_FAILURE;
     }
     FILE *fp;
     fp = fopen(argv[1], "r");
-    long size = fsize(argv[1]);
-    char * fcontent = malloc(size);
+	if (!fp)
+	{
+		fprintf(stderr, "error: cannot open file '%s'\n", argv[1]);
+		return EXIT_FAILURE;
+	}
+	long size = fsize(argv[1]);
+	char * fcontent = malloc(size + 1);
     fread(fcontent, 1, size, fp);
+	fcontent[size] = 0;
     fclose(fp);
     
     chart * c = parse_chart(fcontent);
-    char * svg =chart_to_svg(c);
+    char * svg = chart_to_svg(c);
     printf("%s\n", svg);
     chart_free(c);
     free(svg);
     free(fcontent);
 
-    return 0;
+    return EXIT_SUCCESS;
 }
