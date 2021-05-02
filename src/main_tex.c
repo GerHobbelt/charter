@@ -16,14 +16,14 @@ static off_t fsize(const char *filename) {
 }
 
 #if defined(MONOLITHIC)
-int charter_tex_main(int argc, char* argv[])
+int charter_tex_main(int argc, const char* argv[])
 #else
-int main(int argc, char* argv[])
+int main(int argc, const char* argv[])
 #endif
 {
     if (argc < 2)
     {
-        printf("usage: charter file\n");
+        fprintf(stderr, "usage: charter file\n");
         return -1;
     }
     FILE *fp;

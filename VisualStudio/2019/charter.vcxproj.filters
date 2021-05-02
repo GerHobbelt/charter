@@ -11,4 +11,7 @@
       <UniqueIdentifier>{85421aa8-c0a2-4772-9362-8ba3e101b2ae}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\main.c" />
+  </ItemGroup>
 </Project>
