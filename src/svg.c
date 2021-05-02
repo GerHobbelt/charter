@@ -470,10 +470,10 @@ legend_to_svg(char*     buffer,
             {
                 barPref * pref = p->extra_data;
                 double y0 = y;
-                double w = dw-10;
-                double xb = x+10+w/2;
+                double wb = dw-10;
+                double xb = x+10+wb/2;
                 double yb = y - 8;
-                draw_bar(buffer,p->line_width , color, pref->line_color, xb, yb, y0, w);
+                draw_bar(buffer,p->line_width , color, pref->line_color, xb, yb, y0, wb);
             }
             if (!p->color)
             {
