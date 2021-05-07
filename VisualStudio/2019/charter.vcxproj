@@ -172,6 +172,19 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\main.c" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\CODE_OF_CONDUCT.md" />
+    <None Include="..\..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\marker_charter_support.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\charter.h" />
+    <ClInclude Include="..\..\src\clist.h" />
+    <ClInclude Include="..\..\src\parser.h" />
+    <ClInclude Include="..\..\src\renderer.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
