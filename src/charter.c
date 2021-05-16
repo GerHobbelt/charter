@@ -66,7 +66,7 @@ double * eval_math(plot *p)
         return NULL;
     double * eval = malloc(p->n*sizeof(double));
     double x;
-    te_variable vars[] = {{"x", (te_fun2)&x}};
+    te_variable vars[] = {{"x", .el.variable = &x}};
 
     int err;
     /* Compile the expression with variables. */
