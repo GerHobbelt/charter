@@ -15,11 +15,11 @@ static off_t fsize(const char *filename) {
     return -1;
 }
 
-#if defined(MONOLITHIC)
-int charter_tex_main(int argc, const char* argv[])
-#else
-int main(int argc, const char* argv[])
+#ifdef BUILD_MONOLITHIC
+#define main(c, a)		charter_tex_main(c, a)
 #endif
+
+int main(int argc, const char* argv[])
 {
     if (argc < 2)
     {
