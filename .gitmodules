@@ -1,3 +1,3 @@
 [submodule "src/tinyexpr"]
 	path = src/tinyexpr
-	url = git@github.com:GerHobbelt/tinyexpr.git
+	url = https://github.com/GerHobbelt/tinyexpr.git
