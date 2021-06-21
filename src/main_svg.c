@@ -2,9 +2,13 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 
-
 #include "parser.h"
 #include "renderer.h"
+
+#ifdef BUILD_MONOLITHIC
+#include "monolithic_examples.h"
+#endif
+
 
 static off_t fsize(const char *filename) {
     struct stat st; 
@@ -19,7 +23,7 @@ static off_t fsize(const char *filename) {
 #define main(c, a)		charter_svg_main(c, a)
 #endif
 
-int main(int argc, const char* argv[])
+int main(int argc, const char** argv)
 {   
     if (argc < 2)
     {
