@@ -405,7 +405,7 @@ char * parse_text(char * rest)
 }
 
 
-plot * init_scatter()
+plot * init_scatter(void)
 {
     plot * p = malloc(sizeof(plot));
     p->type = SCATTER;
@@ -421,7 +421,7 @@ plot * init_scatter()
     return p;
 }
 
-plot * init_bar()
+plot * init_bar(void)
 {
     plot * p = malloc(sizeof(plot));
     p->type = BAR;
@@ -444,7 +444,7 @@ plot * init_bar()
     return p;
 }
 
-plot * init_plot()
+plot * init_plot(void)
 {
     plot * p = malloc(sizeof(plot));
     p->type = LINE;
