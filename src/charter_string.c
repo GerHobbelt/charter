@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 cstr*
-cstr_new()
+cstr_new(void)
 {
   cstr * str = malloc(sizeof(cstr));
   str->size = 0;

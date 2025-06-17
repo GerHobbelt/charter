@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 chart * 
-initialize_empty_chart()
+initialize_empty_chart(void)
 {
     chart * new_chart = malloc(sizeof(chart));
     new_chart->width = 600;

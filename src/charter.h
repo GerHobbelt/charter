@@ -91,7 +91,7 @@ plot*
 chart_get_plot(chart*, unsigned int);
 
 chart*
-initialize_empty_chart();
+initialize_empty_chart(void);
 
 
 double
