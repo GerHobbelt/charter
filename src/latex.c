@@ -38,11 +38,11 @@ void
 close_axis  (cstr  *str,
              chart *crt)
 {
-  if (crt->x_axis.mode == NORMAL && crt->y_axis.mode == NORMAL) {
+  if (crt->x_axis.mode == LINEAR && crt->y_axis.mode == LINEAR) {
     cstr_add(str, "\\end{axis}\n");
-  } else if (crt->x_axis.mode == NORMAL && crt->y_axis.mode == LOG) {
+  } else if (crt->x_axis.mode == LINEAR && crt->y_axis.mode == LOG) {
     cstr_add(str, "\\end{semilogyaxis}\n");
-  } else if (crt->x_axis.mode == LOG && crt->y_axis.mode == NORMAL) {
+  } else if (crt->x_axis.mode == LOG && crt->y_axis.mode == LINEAR) {
     cstr_add(str, "\\end{semilogxaxis}\n");
   } else {
     cstr_add(str, "\\end{loglogaxis}\n");
@@ -54,11 +54,11 @@ void
 render_axis (cstr  *str,
              chart *crt)
 {
-  if (crt->x_axis.mode == NORMAL && crt->y_axis.mode == NORMAL) {
+  if (crt->x_axis.mode == LINEAR && crt->y_axis.mode == LINEAR) {
     cstr_add(str, "\\begin{axis}[\n");
-  } else if (crt->x_axis.mode == NORMAL && crt->y_axis.mode == LOG) {
+  } else if (crt->x_axis.mode == LINEAR && crt->y_axis.mode == LOG) {
     cstr_add(str, "\\begin{semilogyaxis}[\n");
-  } else if (crt->x_axis.mode == LOG && crt->y_axis.mode == NORMAL) {
+  } else if (crt->x_axis.mode == LOG && crt->y_axis.mode == LINEAR) {
     cstr_add(str, "\\begin{semilogxaxis}[\n");
   } else {
     cstr_add(str, "\\begin{loglogaxis}[\n");
