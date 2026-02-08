@@ -5,9 +5,8 @@
 #include "parser.h"
 #include "renderer.h"
 
-extern int charter_svg_main(int argc, const char* argv[]);
-extern int charter_tex_main(int argc, const char* argv[]);
-extern int tiny_expr_repl_main(int argc, const char* argv[]);
+#include "./monolithic_examples.h"
+#include "../../tinyexpr/monolithic_examples.h"
 
 typedef int main_f(int argc, const char* argv[]);
 
@@ -35,7 +34,7 @@ static void print_command_list(void)
 }
 
 // MONOLITHIC dispatcher
-int main(int argc, const char* argv[])
+int main(int argc, const char** argv)
 {
     if (argc < 2)
     {
